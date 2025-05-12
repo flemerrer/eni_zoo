@@ -2,5 +2,18 @@ Personal Work realized for Java SE module of my ENI cursus.
 
 Comment: I renamed french variables to english, per my personal preference. 
 
-PW1: I implemented Jupiter (JUnit5) and refactored the given trace tests in order to implement Unit Testing. Could be improved and atomicized. 
+PW1: 
+- Status: Done
+- Comments: 
+  - I implemented Jupiter (JUnit5) and refactored the given trace tests in order to implement some Unit Testing. 
+  - Could be improved and atomicized. 
 
+PW2:
+- Status: Done
+- Comments :
+  - Unit testing of POJO instances declared in PW1.
+  - I could refactor PW1 tests and create one file per POJO.
+  - I could test hashstring instead of testing toString equality.
+
+PW3:
+- Status : Pending
