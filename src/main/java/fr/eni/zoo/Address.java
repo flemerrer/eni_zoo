@@ -1,6 +1,6 @@
 package fr.eni.zoo;
 
-public class Adress {
+public class Address {
 
     int id;
     String number;
@@ -8,7 +8,7 @@ public class Adress {
     String city;
     String postalCode;
 
-    public Adress(int id, String number, String street, String city, String postalCode) {
+    public Address(int id, String number, String street, String city, String postalCode) {
         this.id = id;
         this.number = number;
         this.street = street;
@@ -16,7 +16,7 @@ public class Adress {
         this.postalCode = postalCode;
     }
 
-    public Adress() {
+    public Address() {
     }
 
     public int getId() {
