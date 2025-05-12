@@ -5,12 +5,12 @@ public class PooDrills04 {
 	private static final int SIZE = 10;
 
 	public static void main(String[] args) {
-		Shape[] tabForme = new Shape[SIZE];
+		Shape[] shapesArray = new Shape[SIZE];
 		int index = 0;
-		tabForme[index++] = new Triangle(22, 10);
-		tabForme[index++] = new Rectangle(22, 10);
-		tabForme[index++] = new Triangle(4, 125);
-		tabForme[index++] = new Rectangle(4, 125);
+		shapesArray[index++] = new Triangle(22, 10);
+		shapesArray[index++] = new Rectangle(22, 10);
+		shapesArray[index++] = new Triangle(4, 125);
+		shapesArray[index++] = new Rectangle(4, 125);
 
 		// Les lignes de codes suivantes doivent afficher
 		/*
@@ -23,7 +23,7 @@ public class PooDrills04 {
 		 * Surface de : Rectangle [largeur=4.0, longueur=125.0] est 500.0
 		 */
 		for (int i = 0; i < index; i++) {
-			System.out.println("Surface de : " + tabForme[i].toString() + " est " + tabForme[i].computeArea());
+			System.out.println("Surface de : " + shapesArray[i].toString() + " est " + shapesArray[i].computeArea());
 		}
 
 		// Comment faire pour garantir qu'un Triangle, Rectangle ou une autre

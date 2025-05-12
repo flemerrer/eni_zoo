@@ -61,7 +61,7 @@ public class Animal {
 
     @Override
     public String toString() {
-        return "Animal [id=" + id + ", name=" + name + " isFemale=" + isFemale + " type=" + animalType + "]";
+        return "Animal [id=" + id + ", name=" + name + ", isFemale=" + isFemale + ", type=" + animalType + "]";
     }
 
 }
