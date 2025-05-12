@@ -23,14 +23,7 @@ public class Healer extends Employee {
 
     @Override
     public String toString() {
-        return "Healer{" +
-                "animalType=" + animalType +
-                ", id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", salary=" + salary +
-                ", address=" + address +
-                '}';
+        return "Healer [id=" + getId() + ", lastName=" + getLastName() + ", firstName=" + getFirstName() + ", salary=" + getSalary() + "] [specialty=" + getAnimalType() + "]";
     }
 }
 

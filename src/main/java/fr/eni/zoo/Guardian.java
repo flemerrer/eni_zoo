@@ -22,13 +22,6 @@ public class Guardian extends Employee {
 
     @Override
     public String toString() {
-        return "Guardian{" +
-                "nightShift=" + nightShift +
-                ", id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", salary=" + salary +
-                ", address=" + address +
-                '}';
+        return "Guardian [id=" + getId() + ", lastName=" + getLastName() + ", firstName=" + getFirstName() + ", salary=" + getSalary() + "] [nightShift=" + isNightShift() + "]";
     }
 }
