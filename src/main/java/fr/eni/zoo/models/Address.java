@@ -2,11 +2,11 @@ package fr.eni.zoo.models;
 
 public class Address {
 
-    int id;
-    String number;
-    String street;
-    String city;
-    String postalCode;
+    private int id;
+    private String number;
+    private String street;
+    private String city;
+    private String postalCode;
 
     public Address(int id, String number, String street, String city, String postalCode) {
         this.id = id;

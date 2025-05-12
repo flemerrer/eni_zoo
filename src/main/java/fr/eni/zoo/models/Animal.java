@@ -1,12 +1,14 @@
 package fr.eni.zoo.models;
 
+import fr.eni.poodrills.models.Triangle;
+
 public class Animal {
 
-    int id;
-    String name;
-    int age;
-    boolean isFemale;
-    AnimalType animalType;
+    private int id;
+    private String name;
+    private int age;
+    private boolean isFemale;
+    private AnimalType animalType;
 
     public Animal(int id, String name, boolean isFemale, AnimalType animalType) {
         this.id = id;
@@ -64,4 +66,15 @@ public class Animal {
         return "Animal [id=" + id + ", name=" + name + ", isFemale=" + isFemale + ", type=" + animalType + "]";
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Animal other = (Animal) obj;
+        return getId() == other.getId() && getName().equals(other.getName()) && isFemale() == other.isFemale() && getAnimalType().equals(other.getAnimalType()) ;
+    }
 }

@@ -2,11 +2,11 @@ package fr.eni.zoo.models;
 
 public abstract class Employee {
 
-    int id;
-    String firstName;
-    String lastName;
-    double salary;
-    Address address;
+    private int id;
+    private String firstName;
+    private String lastName;
+    private double salary;
+    private Address address;
 
     public Employee(int id, String firstName, String lastName, double salary, Address address) {
         this.id = id;

@@ -1,6 +1,6 @@
 package fr.eni.zoo;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 import fr.eni.zoo.models.*;
 import org.junit.jupiter.api.BeforeAll;
