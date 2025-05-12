@@ -1,30 +1,12 @@
 package fr.eni.poodrills.models;
 
 public class Rectangle extends Shape {
-    // Attributs
-    private float width;
-    private float height;
 
-    // Constructeurs
     public Rectangle(int width, int height) {
-        this.width = width;
-        this.height = height;
+        super(width, height);
     }
 
-    public float getWidth() {
-        return width;
-    }
-
-    public void setWidth(float width) {
-        this.width = width;
-    }
-
-    public float getHeight() {
-        return height;
-    }
-
-    public void setHeight(float height) {
-        this.height = height;
+    public Rectangle() {
     }
 
     @Override

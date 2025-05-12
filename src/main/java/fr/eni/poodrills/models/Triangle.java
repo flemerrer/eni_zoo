@@ -3,37 +3,17 @@ package fr.eni.poodrills.models;
 import java.util.Objects;
 
 public class Triangle extends Shape {
-	// Attributs
-	private float width;
-	private float height;
 
-	// Constructeurs
 	public Triangle(int width, int height) {
-		this.width = width;
-		this.height = height;
+		super(width, height);
 	}
 
-	// Méthodes
+	public Triangle() {
+	}
+
 	@Override
 	public float computeArea() {
 		return getWidth() * getHeight() / 2;
-	}
-
-	// Getters et Setters
-	public float getWidth() {
-		return width;
-	}
-
-	public void setWidth(float width) {
-		this.width = width;
-	}
-
-	public float getHeight() {
-		return height;
-	}
-
-	public void setHeight(float height) {
-		this.height = height;
 	}
 
 	@Override
@@ -43,7 +23,7 @@ public class Triangle extends Shape {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(height, width);
+		return Objects.hash(getHeight(), getWidth());
 	}
 
 	@Override
@@ -55,8 +35,8 @@ public class Triangle extends Shape {
 		if (getClass() != obj.getClass())
 			return false;
 		Triangle other = (Triangle) obj;
-		return Float.floatToIntBits(height) == Float.floatToIntBits(other.height)
-				&& Float.floatToIntBits(width) == Float.floatToIntBits(other.width);
+		return Float.floatToIntBits(getHeight()) == Float.floatToIntBits(other.getHeight())
+				&& Float.floatToIntBits(getWidth()) == Float.floatToIntBits(other.getWidth());
 	}
 
 }
