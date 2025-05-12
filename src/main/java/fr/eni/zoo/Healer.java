@@ -25,5 +25,6 @@ public class Healer extends Employee {
     public String toString() {
         return "Healer [id=" + getId() + ", lastName=" + getLastName() + ", firstName=" + getFirstName() + ", salary=" + getSalary() + "] [specialty=" + getAnimalType() + "]";
     }
+
 }
 

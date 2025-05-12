@@ -6,17 +6,19 @@ import java.util.List;
 public class POJOTraceTests {
 
 	public static void main(String[] args) {
+
 		System.out.println("Part 1 - Business layer tests");
-		// partie utilisateur
+
 		List<Animal> animals = List.of(new Animal(1, "Simba", false, AnimalType.LION),
 				new Animal(2, "Coco", true, AnimalType.MONKEY), new Animal(3, "Gerald", false, AnimalType.GIRAFE),
 				new Animal(4, "dumbo", true, AnimalType.ELEPHANT));
+
 		System.out.println("Animals:");
+
 		for (Animal animal : animals) {
 			System.out.println(animal);
 		}
 
-		// partie métier
 		Address a1 = new Address(1, "9", " chemin des bois", "Nantes", "44000");
 		Address a2 = new Address(2, "1", " rue de la forêt", "Rennes", "35000");
 		Address a3 = new Address(3, "2b", " rue Faraday", "Saint Herblain", "44800");
@@ -31,15 +33,18 @@ public class POJOTraceTests {
 		Employee s3 = new Guardian(3, "Dubois", "Sophie", 1600, a3, true);
 		Employee s4 = new Guardian(4, "Leclerc", "Jacques", 1700, a3, false);
 
-		// Polymorphisme
 		List<Employee> tempContacts = new ArrayList<>();
 		tempContacts.add(s1);
 		tempContacts.add(s2);
 		tempContacts.add(s3);
 		tempContacts.add(s4);
+
 		System.out.println("Employees:");
+
 		for (Employee contact : tempContacts) {
 			System.out.println(contact);
 		}
+
 	}
+
 }

@@ -1,6 +1,7 @@
 package fr.eni.zoo;
 
 public class Guardian extends Employee {
+
     boolean nightShift = false;
 
     public Guardian(int id, String firstName, String lastName, double salary, Address address, boolean nightShift) {
@@ -24,4 +25,5 @@ public class Guardian extends Employee {
     public String toString() {
         return "Guardian [id=" + getId() + ", lastName=" + getLastName() + ", firstName=" + getFirstName() + ", salary=" + getSalary() + "] [nightShift=" + isNightShift() + "]";
     }
+
 }

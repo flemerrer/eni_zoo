@@ -1,6 +1,7 @@
 package fr.eni.zoo;
 
 public class Animal {
+
     int id;
     String name;
     int age;
@@ -62,4 +63,5 @@ public class Animal {
     public String toString() {
         return "Animal [id=" + id + ", name=" + name + " isFemale=" + isFemale + " type=" + animalType + "]";
     }
+
 }
