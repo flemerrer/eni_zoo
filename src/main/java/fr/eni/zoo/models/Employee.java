@@ -1,4 +1,4 @@
-package fr.eni.zoo;
+package fr.eni.zoo.models;
 
 public abstract class Employee {
 
