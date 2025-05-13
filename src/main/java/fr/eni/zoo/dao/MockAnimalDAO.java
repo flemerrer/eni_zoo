@@ -50,10 +50,10 @@ public class MockAnimalDAO {
                     return a;
                 }
             }
+            throw new DAOException("l'animal n'est pas présent dans la liste");
         } catch (Exception e) {
             throw new DAOException("erreur lors de la récupération de l'animal");
         }
-        return null;
     }
 
     public List<Animal> findAll() {

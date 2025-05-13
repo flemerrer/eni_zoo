@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class MockAnimalDAOTest {
 
-	MockAnimalDAO animalDao = new MockAnimalDAO();
+	private static MockAnimalDAO animalDao = new MockAnimalDAO();
 
 	private static Animal lionMale;
 	private static Animal monkeyFemale;
@@ -27,15 +27,16 @@ public class MockAnimalDAOTest {
 		girafeMale = new Animal(0, "Gerald", false, AnimalType.GIRAFE);
 		elephantFemale = new Animal(0, "dumbo", true, AnimalType.ELEPHANT);
 		unknown = new Animal(100, "INCONNU", false, AnimalType.LION);
-	}
 
-	@Test
-	void insertAnimalShouldPopulateDAOAnimalsListWithAnimals() {
 		animalDao.insertAnimal(lionMale);
 		animalDao.insertAnimal(monkeyFemale);
 		animalDao.insertAnimal(girafeMale);
 		animalDao.insertAnimal(elephantFemale);
 		animalDao.insertAnimal(unknown);
+	}
+
+	@Test
+	void insertAnimalShouldPopulateDAOAnimalsListWithAnimals() {
 		for (Animal a : animalDao.animals) {
 			assertInstanceOf(Animal.class, a);
 		}
