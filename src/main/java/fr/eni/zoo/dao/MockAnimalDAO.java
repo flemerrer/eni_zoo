@@ -5,7 +5,7 @@ import fr.eni.zoo.models.Animal;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MockAnimalDAO {
+public class MockAnimalDAO implements AnimalDAO {
 
     private static MockAnimalDAO instance;
     private static int idCounter;
