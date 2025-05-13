@@ -16,4 +16,6 @@ PW2:
   - I could test hashstring instead of testing toString equality.
 
 PW3:
-- Status : Pending
+- Status : Ongoing
+- Comments :
+  - Optional MockEmployeeDAO to implement and test
