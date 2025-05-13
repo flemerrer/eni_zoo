@@ -18,4 +18,5 @@ PW2:
 PW3:
 - Status : Ongoing
 - Comments :
-  - Optional MockEmployeeDAO to implement and test
+  - Renamed BO to Models, BLL to Services, DAL to DAO, for convenience 
+  - Optional : MockEmployeeDAO & EmployeeManager to implement and test

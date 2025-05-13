@@ -1,6 +1,6 @@
-package fr.eni.zoo.dao;
+package fr.eni.zoo.services;
 
-public class MockEmployeeDAO {
+public class EmployeeManager {
 
     //TODO: optional > implement class and related exception
 
