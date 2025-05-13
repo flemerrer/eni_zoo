@@ -10,7 +10,7 @@ import fr.eni.zoo.models.*;
 
 public class MockAnimalDAOTest {
 
-	private static AnimalDAO animalDao = MockAnimalDAO.getInstance();
+	private static AnimalDAO animalDao = DAOFactory.getInstance().getAnimalDAO("MOCK");
 
 	private static Animal lionMale;
 	private static Animal monkeyFemale;

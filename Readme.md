@@ -16,8 +16,14 @@ PW2:
   - I could test hashstring instead of testing toString equality.
 
 PW3:
-- Status: Ongoing
+- Status: Done
 - Comments:
   - Renamed BO to Models, BLL to Services, DAL to DAO, for convenience 
   - Optional exercise: implement MockEmployeeDAO, EmployeeManager and test methods
   - Instead of doing the optional exercise, I implemented Unit Testing
+
+PW3:
+- Status: Done
+- Comments:
+  - Optional exercise : implement singleton and factory pattern for EmployeeDAO
+  - I didn't do it because I found it to be redundant
