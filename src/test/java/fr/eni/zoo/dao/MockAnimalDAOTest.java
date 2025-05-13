@@ -1,13 +1,12 @@
 package fr.eni.zoo.dao;
 
-import fr.eni.zoo.models.Animal;
-import fr.eni.zoo.models.AnimalType;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-
 import java.util.List;
 
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+
+import fr.eni.zoo.models.*;
 
 public class MockAnimalDAOTest {
 
