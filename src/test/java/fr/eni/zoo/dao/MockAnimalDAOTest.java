@@ -10,7 +10,7 @@ import fr.eni.zoo.models.*;
 
 public class MockAnimalDAOTest {
 
-	private static MockAnimalDAO animalDao = new MockAnimalDAO();
+	private static MockAnimalDAO animalDao = MockAnimalDAO.getInstance();
 
 	private static Animal lionMale;
 	private static Animal monkeyFemale;
@@ -36,7 +36,7 @@ public class MockAnimalDAOTest {
 
 	@Test
 	void insertAnimalShouldPopulateDAOAnimalsListWithAnimals() {
-		for (Animal a : animalDao.animals) {
+		for (Animal a : animalDao.findAll()) {
 			assertInstanceOf(Animal.class, a);
 		}
 	}

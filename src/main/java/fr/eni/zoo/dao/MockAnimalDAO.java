@@ -7,27 +7,35 @@ import java.util.List;
 
 public class MockAnimalDAO {
 
-    int idCounter;
-    List<Animal> animals = new ArrayList<Animal>();
+    private static MockAnimalDAO instance;
+    private static int idCounter;
+    private static List<Animal> animals = new ArrayList<Animal>();
 
-    public MockAnimalDAO() {
-        this.idCounter = 1;
+    private MockAnimalDAO() {
+        idCounter = 1;
+    }
+
+    public static MockAnimalDAO getInstance() {
+        if(instance == null) {
+            instance = new MockAnimalDAO();
+        }
+        return instance;
     }
 
     public void setAnimals(List<Animal> animals) {
-        this.animals = animals;
+        MockAnimalDAO.animals = animals;
     }
 
     public int insertAnimal(Animal animal) {
         animal.setId(idCounter);
-        this.animals.add(animal);
+        animals.add(animal);
         idCounter++;
         return animal.getId();
     }
 
     public void deleteAnimal(Animal animal) throws DAOException {
         try {
-            this.animals.remove(animal);
+            animals.remove(animal);
         } catch (Exception e) {
             throw new DAOException("erreur lors de la suppression de l'animal");
         }
@@ -35,8 +43,8 @@ public class MockAnimalDAO {
 
     public void updateAnimal(Animal animal) throws DAOException {
         try {
-            if(this.animals.removeIf(target -> target.getId() == animal.getId())){
-                this.animals.add(animal);
+            if(animals.removeIf(target -> target.getId() == animal.getId())){
+                animals.add(animal);
             }
         } catch (Exception e) {
             throw new DAOException("erreur lors de la mise à jour de l'animal");

@@ -8,7 +8,19 @@ import java.util.List;
 
 public class AnimalManager {
 
-    MockAnimalDAO animalDao = new MockAnimalDAO();
+    private static AnimalManager instance;
+    private static MockAnimalDAO animalDao;
+
+    private AnimalManager() {
+        animalDao = MockAnimalDAO.getInstance();
+    }
+
+    public static AnimalManager getInstance() {
+        if(instance == null) {
+            instance = new AnimalManager();
+        }
+        return instance;
+    }
 
     public int addAnimal(Animal animal) throws ServiceException {
 

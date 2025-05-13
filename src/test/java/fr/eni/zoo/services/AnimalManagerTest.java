@@ -12,31 +12,35 @@ import fr.eni.zoo.models.*;
 
 public class AnimalManagerTest {
 
-	AnimalManager animalManager = new AnimalManager();
-
+	private static AnimalManager animalManager = AnimalManager.getInstance();
 	private static List<Animal> zoo = new ArrayList<>();
+	Animal unknown = new Animal(0, "unknown", false, AnimalType.LION);
 
 	@BeforeAll
-	static void init() {
+	static void init() throws ServiceException {
 		zoo.add(new Animal(0, "Simba", false, AnimalType.LION));
 		zoo.add(new Animal(0, "Coco", true, AnimalType.MONKEY));
 		zoo.add(new Animal(0, "Gerald", false, AnimalType.GIRAFE));
 		zoo.add(new Animal(0, "Dumbo", true, AnimalType.ELEPHANT));
+		for (Animal animal : zoo) {
+			try {
+				animalManager.addAnimal(animal);
+			} catch (Exception e) {
+				throw new ServiceException(e.getMessage());
+			}
+		}
 	}
 
 	@Test
 	void addAnimalShouldFillAnimalDAOAnimalList() throws ServiceException {
-		for (Animal animal : zoo) {
-			int i = 1;
-			try {
-				animalManager.addAnimal(animal);
-				assertInstanceOf(Animal.class, animalManager.getAnimal(i));
-			} catch (Exception e) {
-				throw new ServiceException(e.getMessage());
-			}
-			i++;
-        }
-		//FIXME: There must be a better way to write this | Try parametrized test ?
+//		int i = 1;
+//		for (Animal animal : zoo) {
+//			assertEquals(zoo.get(i-1), animalManager.getAnimal(i));
+//			i++;
+//        }
+		animalManager.addAnimal(unknown);
+		assertEquals(unknown, animalManager.getAnimal(5));
+		animalManager.removeAnimal(unknown);
 	}
 
 	@Test
@@ -47,13 +51,12 @@ public class AnimalManagerTest {
 	}
 
 	@Test
-	void getAnimalByIdShouldReturnTargetAnimal() throws ServiceException, DAOException {
-		animalManager.addAnimal(zoo.getFirst());
+	void getAnimalByIdShouldReturnTargetAnimal() throws ServiceException {
 		assertEquals("Simba", animalManager.getAnimal(1).getName());
 	}
 
 	@Test
-	void getAnimalByIdGivenIncorrectIdShouldThrowAServiceException() throws ServiceException, DAOException {
+	void getAnimalByIdGivenIncorrectIdShouldThrowAServiceException() {
 		assertThrows(ServiceException.class, () -> animalManager.getAnimal(100));
 	}
 
@@ -61,7 +64,6 @@ public class AnimalManagerTest {
 	void updateAnimalShouldChangeTargetInDAOAnimalsList() throws ServiceException {
 		try {
 			Animal animal = zoo.getFirst();
-			animalManager.addAnimal(animal);
 			animal.setName("Moufassa");
 			animalManager.updateAnimal(animal);
 			assertEquals("Moufassa", animalManager.getAnimal(1).getName());
@@ -71,22 +73,13 @@ public class AnimalManagerTest {
 	}
 
 	@Test
-	void getAllAnimalsShouldReturnAllAnimalsFromDAOAnimalsList() throws ServiceException {
-		for (Animal animal : zoo) {
-			try {
-				animalManager.addAnimal(animal);
-			} catch (Exception e) {
-				throw new ServiceException(e.getMessage());
-			}
-		}
+	void getAllAnimalsShouldReturnAllAnimalsFromDAOAnimalsList() {
 		List<Animal> animals = animalManager.getAllAnimals();
 		assertEquals(4, animals.size());
 	}
 
 	@Test
 	void removeAnimalShouldRemoveAnimalFromDAOAnimalsList() throws ServiceException {
-		animalManager.addAnimal(zoo.getFirst());
-		animalManager.addAnimal(zoo.get(1));
 		animalManager.removeAnimal(zoo.get(1));
 		assertThrows(ServiceException.class, () -> animalManager.getAnimal(2));
 	}
