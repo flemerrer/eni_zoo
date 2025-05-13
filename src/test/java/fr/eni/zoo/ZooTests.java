@@ -11,14 +11,14 @@ import java.util.List;
 
 public class ZooTests {
 
-    public static List<Animal> animals;
-    public static Address a1;
-    public static Address a2;
-    public static Address a3;
-    public static Employee s1;
-    public static Employee s2;
-    public static Employee s3;
-    public static Employee s4;
+    private static List<Animal> animals;
+    private static Address a1;
+    private static Address a2;
+    private static Address a3;
+    private static Employee s1;
+    private static Employee s2;
+    private static Employee s3;
+    private static Employee s4;
 
     @BeforeAll
     static void init() throws Exception {
