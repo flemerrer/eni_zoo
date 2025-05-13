@@ -2,11 +2,28 @@ package fr.eni.zoo.models;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class AnimalTest {
 
     public static Animal animal;
+
+    @Test
+    void animalsToStringTest() {
+
+        List<Animal> animals = List.of(new Animal(1, "Simba", false, AnimalType.LION),
+                new Animal(2, "Coco", true, AnimalType.MONKEY), new Animal(3, "Gerald", false, AnimalType.GIRAFE),
+                new Animal(4, "dumbo", true, AnimalType.ELEPHANT));
+
+        for (Animal animal : animals) {
+            String expectedString = "Animal [id=" + animal.getId() + ", name=" + animal.getName() + ", isFemale=" + animal.isFemale() + ", type=" + animal.getAnimalType() + "]";
+            assertEquals(expectedString, animal.toString());
+        }
+
+    }
 
     @Test
     public void defaultAnimalConstructorShouldNotReturnNullObject() {
