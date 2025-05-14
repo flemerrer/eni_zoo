@@ -18,7 +18,7 @@ Comment: I renamed french variables to english, per my personal preference.
 ### PW3
 - Status: Done
 - Comments:
-  - Renamed BO to Models, BLL to Services, DAL to DAO, for convenience 
+  - Renamed BO to Models, BLL to Services, DAL to DAO, for personal convenience 
   - Optional exercise: implement MockEmployeeDAO, EmployeeManager and test methods
   - Instead of doing the optional exercise, I implemented Unit Testing
 
@@ -29,6 +29,7 @@ Comment: I renamed french variables to english, per my personal preference.
   - I didn't do it because I found it to be redundant
 
 ### PW5
-- Status: Ongoing
+- Status: Done
 - Comments:
   - Currently considering deleting short PW such as pooDrills and turtleRace
+  - For better tests, each one should be independant from each other (not currently the case)

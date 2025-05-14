@@ -21,6 +21,7 @@ public class MockAnimalDAOTest {
 	private static Animal elephantFemale;
 	private static Animal unknown;
 
+	//FIXME: Make tests independant from each other
 
 	@BeforeAll
 	static void init() throws ServiceException {
