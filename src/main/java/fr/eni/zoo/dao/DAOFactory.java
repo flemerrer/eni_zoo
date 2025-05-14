@@ -1,7 +1,9 @@
 package fr.eni.zoo.dao;
 
-import fr.eni.zoo.models.Animal;
-import fr.eni.zoo.models.Employee;
+import fr.eni.zoo.dao.animals.AnimalDAO;
+import fr.eni.zoo.dao.animals.JDBCAnimalDAO;
+import fr.eni.zoo.dao.animals.MockAnimalDAO;
+import fr.eni.zoo.dao.employees.EmployeeDAO;
 
 public class DAOFactory {
 

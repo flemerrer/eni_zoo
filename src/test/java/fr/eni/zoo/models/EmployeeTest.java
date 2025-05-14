@@ -2,6 +2,11 @@ package fr.eni.zoo.models;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import fr.eni.zoo.models.animals.AnimalType;
+import fr.eni.zoo.models.employees.Address;
+import fr.eni.zoo.models.employees.Employee;
+import fr.eni.zoo.models.employees.Guardian;
+import fr.eni.zoo.models.employees.Healer;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;

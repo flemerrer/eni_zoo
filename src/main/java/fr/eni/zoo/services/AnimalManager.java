@@ -1,8 +1,8 @@
 package fr.eni.zoo.services;
 
 import fr.eni.zoo.dao.DAOException;
-import fr.eni.zoo.dao.MockAnimalDAO;
-import fr.eni.zoo.models.Animal;
+import fr.eni.zoo.dao.animals.MockAnimalDAO;
+import fr.eni.zoo.models.animals.Animal;
 
 import java.util.List;
 
@@ -73,6 +73,7 @@ public class AnimalManager {
     }
 
     public double getFemalePercentage() {
+
         return 0;
     }
 

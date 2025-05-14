@@ -1,6 +1,6 @@
-package fr.eni.zoo.models;
+package fr.eni.zoo.models.employees;
 
-import java.util.Objects;
+import fr.eni.zoo.models.animals.AnimalType;
 
 public class Healer extends Employee {
 

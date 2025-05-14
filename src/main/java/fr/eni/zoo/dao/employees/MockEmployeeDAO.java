@@ -1,6 +1,8 @@
-package fr.eni.zoo.dao;
+package fr.eni.zoo.dao.employees;
 
-import fr.eni.zoo.models.Employee;
+import fr.eni.zoo.dao.DAOException;
+import fr.eni.zoo.dao.DAOInterface;
+import fr.eni.zoo.models.employees.Employee;
 
 import java.util.List;
 

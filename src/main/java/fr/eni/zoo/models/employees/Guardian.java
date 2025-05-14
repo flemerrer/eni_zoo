@@ -1,6 +1,4 @@
-package fr.eni.zoo.models;
-
-import java.util.Objects;
+package fr.eni.zoo.models.employees;
 
 public class Guardian extends Employee {
 

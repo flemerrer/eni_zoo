@@ -1,6 +1,4 @@
-package fr.eni.zoo.models;
-
-import fr.eni.poodrills.models.Triangle;
+package fr.eni.zoo.models.animals;
 
 public class Animal {
 

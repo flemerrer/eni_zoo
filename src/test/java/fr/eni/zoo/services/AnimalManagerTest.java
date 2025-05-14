@@ -3,12 +3,11 @@ package fr.eni.zoo.services;
 import java.util.ArrayList;
 import java.util.List;
 
-import fr.eni.zoo.dao.DAOException;
+import fr.eni.zoo.models.animals.Animal;
+import fr.eni.zoo.models.animals.AnimalType;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-
-import fr.eni.zoo.models.*;
 
 public class AnimalManagerTest {
 

@@ -1,5 +1,7 @@
 package fr.eni.zoo.models;
 
+import fr.eni.zoo.models.animals.Animal;
+import fr.eni.zoo.models.animals.AnimalType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

@@ -1,6 +1,7 @@
-package fr.eni.zoo.dao;
+package fr.eni.zoo.dao.animals;
 
-import fr.eni.zoo.models.Animal;
+import fr.eni.zoo.dao.DAOException;
+import fr.eni.zoo.models.animals.Animal;
 
 import java.util.ArrayList;
 import java.util.List;
