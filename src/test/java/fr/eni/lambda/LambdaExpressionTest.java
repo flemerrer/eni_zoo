@@ -48,7 +48,7 @@ public class LambdaExpressionTest {
 
         // Afficher la liste des chansons (toString)
 
-        System.out.println("\n" + "*".repeat(10));
+        System.out.println("*".repeat(10));
         songs.forEach(System.out::println);
         // Supprimer les chansons trop longues (>5 minutes)
 
@@ -66,7 +66,6 @@ public class LambdaExpressionTest {
                 }
         ).toList();
 
-        System.out.println("\n" + "*".repeat(10));
         sortedList.forEach(System.out::println);
 
     }

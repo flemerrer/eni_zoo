@@ -72,7 +72,8 @@ public class AnimalManager {
         return animalDao.findAll();
     }
 
-    public void getFemalePercentage() {
+    public double getFemalePercentage() {
+        return 0;
     }
 
 }

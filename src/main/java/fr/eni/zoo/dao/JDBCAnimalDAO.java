@@ -2,7 +2,6 @@ package fr.eni.zoo.dao;
 
 import fr.eni.zoo.models.Animal;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class JDBCAnimalDAO implements AnimalDAO {
@@ -21,7 +20,6 @@ public class JDBCAnimalDAO implements AnimalDAO {
 
     @Override
     public void setAnimals(List<Animal> animals) {
-
     }
 
     @Override

@@ -1,5 +1,8 @@
 package fr.eni.zoo.dao;
 
+import fr.eni.zoo.models.Animal;
+import fr.eni.zoo.models.Employee;
+
 public class DAOFactory {
 
     private static DAOFactory instance = null;
@@ -20,5 +23,9 @@ public class DAOFactory {
             case "JDBC" -> JDBCAnimalDAO.getInstance();
             default -> null;
         };
+    }
+
+    public EmployeeDAO getEmployeeDAO() {
+        return EmployeeDAO.getInstance();
     }
 }
