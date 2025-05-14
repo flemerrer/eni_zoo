@@ -31,4 +31,4 @@ Comment: I renamed french variables to english, per my personal preference.
 ### PW5
 - Status: Ongoing
 - Comments:
-  - Currently considering deleting short PW such as poo drills and turtlerace
+  - Currently considering deleting short PW such as pooDrills and turtleRace
