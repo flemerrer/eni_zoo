@@ -10,25 +10,25 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class TurtleRaceTest {
 
-    private static Turtle bob;
-    private static Turtle patrick;
-    private static Turtle sandy;
+    private static Turtle michelangelo;
+    private static Turtle donatello;
+    private static Turtle leonardo;
 
     @BeforeAll
     static void init() {
-        bob = new Turtle(1, "Bob", 15.00);
-        patrick = new Turtle(2, "Patrick", 30.00);
-        sandy = new Turtle(3, "Sandy", 10.00);
+        michelangelo = new Turtle(1, "Michelangelo", 15.00);
+        donatello = new Turtle(2, "Donatello", 30.00);
+        leonardo = new Turtle(3, "Leonardo", 10.00);
     }
 
     @Test
     void testTurtleRace() {
         ArrayList<Turtle> turtles = new ArrayList<>();
-        turtles.add(bob);
-        turtles.add(patrick);
-        turtles.add(sandy);
+        turtles.add(michelangelo);
+        turtles.add(donatello);
+        turtles.add(leonardo);
         Collections.sort(turtles);
-        assertEquals(sandy.getName(), turtles.getFirst().getName());
+        assertEquals(leonardo.getName(), turtles.getFirst().getName());
     }
 
 }
