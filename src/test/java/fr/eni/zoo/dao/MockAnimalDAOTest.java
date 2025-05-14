@@ -5,13 +5,15 @@ import java.util.List;
 import fr.eni.zoo.dao.animals.AnimalDAO;
 import fr.eni.zoo.models.animals.Animal;
 import fr.eni.zoo.models.animals.AnimalType;
+import fr.eni.zoo.services.AnimalManager;
+import fr.eni.zoo.services.ServiceException;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class MockAnimalDAOTest {
 
-	private static AnimalDAO animalDao = DAOFactory.getInstance().getAnimalDAO("MOCK");
+	private static AnimalManager animalManager = AnimalManager.getInstance();
 
 	private static Animal lionMale;
 	private static Animal monkeyFemale;
@@ -21,56 +23,62 @@ public class MockAnimalDAOTest {
 
 
 	@BeforeAll
-	static void init() {
+	static void init() throws ServiceException {
 		lionMale = new Animal(0, "Simba", false, AnimalType.LION);
 		monkeyFemale = new Animal(0, "Coco", true, AnimalType.MONKEY);
 		girafeMale = new Animal(0, "Gerald", false, AnimalType.GIRAFE);
 		elephantFemale = new Animal(0, "dumbo", true, AnimalType.ELEPHANT);
 		unknown = new Animal(100, "INCONNU", false, AnimalType.LION);
 
-		animalDao.insertAnimal(lionMale);
-		animalDao.insertAnimal(monkeyFemale);
-		animalDao.insertAnimal(girafeMale);
-		animalDao.insertAnimal(elephantFemale);
-		animalDao.insertAnimal(unknown);
+		animalManager.addAnimal(lionMale);
+		animalManager.addAnimal(monkeyFemale);
+		animalManager.addAnimal(girafeMale);
+		animalManager.addAnimal(elephantFemale);
+		animalManager.addAnimal(unknown);
 	}
 
 	@Test
 	void insertAnimalShouldPopulateDAOAnimalsListWithAnimals() {
-		for (Animal a : animalDao.findAll()) {
+		for (Animal a : animalManager.getAllAnimals()) {
 			assertInstanceOf(Animal.class, a);
 		}
 	}
 
 	@Test
-	void updateAnimalShouldChangeTargetInDAOAnimalsList() throws DAOException {
+	void updateAnimalShouldChangeTargetInDAOAnimalsList() throws ServiceException {
 		String updatedName = "Moufassa";
 		lionMale.setName(updatedName);
-		animalDao.updateAnimal(lionMale);
-		assertEquals("Moufassa", animalDao.findById(1).getName());
+		animalManager.updateAnimal(lionMale);
+		assertEquals("Moufassa", animalManager.getAnimal(1).getName());
 	}
 
 	@Test
-	void getAnimalByIdShouldReturnTargetAnimal() throws DAOException {
+	void getAnimalByIdShouldReturnTargetAnimal() throws ServiceException {
 		String expectedName = "Gerald";
-		assertEquals("Gerald", animalDao.findById(3).getName());
+		assertEquals("Gerald", animalManager.getAnimal(3).getName());
 	}
 
 	@Test
-	void getAnimalByIdGivenIncorrectIdShouldThrowDAOException() throws DAOException {
-		assertThrows(DAOException.class, () -> animalDao.findById(1000));
+	void getAnimalByIdGivenIncorrectIdShouldThrowDAOException() throws ServiceException {
+		assertThrows(ServiceException.class, () -> animalManager.getAnimal(1000));
 	}
 
 	@Test
 	void findAllShouldReturnAllAnimalsFromDAOAnimalsList() {
-		List<Animal> animals = animalDao.findAll();
+		List<Animal> animals = animalManager.getAllAnimals();
 			assertEquals(4, animals.size());
 		}
 
 	@Test
-	void deleteAnimalShouldDeleteAnimalFromDAOAnimalsList() throws DAOException {
-		animalDao.deleteAnimal(unknown);
-		assertThrows(DAOException.class, () -> animalDao.findById(100));
+	void deleteAnimalShouldDeleteAnimalFromDAOAnimalsList() throws ServiceException {
+		animalManager.removeAnimal(unknown);
+		assertThrows(ServiceException.class, () -> animalManager.getAnimal(100));
 	}
+
+	@Test
+	void getFemalePercentageShouldReturnFemalePercentage() throws ServiceException {
+		assertEquals(0.5, animalManager.getFemalePercentage());
+	}
+
 }
 

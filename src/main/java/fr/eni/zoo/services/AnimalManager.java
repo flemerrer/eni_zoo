@@ -1,6 +1,7 @@
 package fr.eni.zoo.services;
 
 import fr.eni.zoo.dao.DAOException;
+import fr.eni.zoo.dao.DAOFactory;
 import fr.eni.zoo.dao.animals.MockAnimalDAO;
 import fr.eni.zoo.models.animals.Animal;
 
@@ -12,7 +13,7 @@ public class AnimalManager {
     private static MockAnimalDAO animalDao;
 
     private AnimalManager() {
-        animalDao = MockAnimalDAO.getInstance();
+        animalDao = (MockAnimalDAO) DAOFactory.getInstance().getAnimalDAO("MOCK");
     }
 
     public static AnimalManager getInstance() {
@@ -73,8 +74,7 @@ public class AnimalManager {
     }
 
     public double getFemalePercentage() {
-
-        return 0;
+        return (double) getAllAnimals().stream().filter( a -> a.isFemale()).count() / (long) getAllAnimals().size();
     }
 
 }
