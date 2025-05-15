@@ -2,6 +2,8 @@ Personal Work realized for Java SE module of my ENI cursus.
 
 Comment: I renamed french variables to english, per my personal preference. 
 
+Main projects : fr.eni.zoo and fr.eni.paperfactory
+
 ### PW1
 - Status: Done
 - Comments: 

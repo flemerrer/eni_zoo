@@ -5,12 +5,17 @@ public abstract class Item {
     private String brand;
     private String name;
     private float price;
+    private int id;
 
     public Item(String model, String brand, String name, float price) {
         this.model = model;
         this.brand = brand;
         this.name = name;
         this.price = price;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getModel() {
@@ -51,5 +56,13 @@ public abstract class Item {
                "        Marque : " + getBrand() + "\n" +
                "        Désignation : " + getName() + "\n" +
                "        Prix unitaire : " + getPrice();
+    }
+
+    public void setId(int i) {
+        this.id = i;
+    }
+
+    public boolean equals(Integer id) {
+        return this.id == id;
     }
 }

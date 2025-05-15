@@ -55,4 +55,9 @@ public class Cart extends CartModel {
     private String printLines() {
         return "\n- "+lines.stream().map(CartLine::toString).collect(Collectors.joining("\n- "));
     }
+
+    @Override
+    public boolean equals(int id) {
+        return getId() == id;
+    }
 }

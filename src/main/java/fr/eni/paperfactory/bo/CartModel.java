@@ -6,4 +6,6 @@ public abstract class CartModel {
     public CartModel() {
         CartModel.id++;
     }
+
+    public abstract boolean equals(int id);
 }

@@ -18,6 +18,6 @@ public class Pen extends Item {
 
     @Override
     public String toString() {
-        return "        Couleur : " + getColor() + "\n" + super.toString();
+        return "Stylo\n        Couleur : " + getColor() + "\n" + super.toString();
     }
 }

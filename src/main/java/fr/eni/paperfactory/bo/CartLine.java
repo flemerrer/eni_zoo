@@ -53,7 +53,11 @@ public class CartLine {
         return "Ligne (id=" + id + ")\n" +
                 "    Qte : " + quantity + "\n" +
                 "    Prix : " + price + "\n" +
-                "    Article : " + item.getName() + "\n" +
-                item.toString();
+                "    Article : " + item.toString();
     }
+
+    public boolean equals(int id) {
+        return getId() == id;
+    }
+
 }

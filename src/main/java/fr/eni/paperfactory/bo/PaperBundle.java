@@ -19,6 +19,6 @@ public class PaperBundle extends Item {
 
     @Override
     public String toString() {
-        return "        Grammage : " + getGrain() + "\n" + super.toString();
+        return "Ramette\n        Grammage : " + getGrain() + "\n" + super.toString();
     }
 }
