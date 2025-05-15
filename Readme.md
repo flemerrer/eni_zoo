@@ -33,3 +33,8 @@ Comment: I renamed french variables to english, per my personal preference.
 - Comments:
   - Currently considering deleting short PW such as pooDrills and turtleRace
   - For better tests, each one should be independant from each other (not currently the case)
+
+### PW6 (additional)
+- Status: Ongoing
+- Comments:
+  - None
