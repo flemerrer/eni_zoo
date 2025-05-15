@@ -41,7 +41,7 @@ public class CartLine {
     }
 
     public float getPrice() {
-        return price;
+        return price*quantity;
     }
 
     public void setPrice(float price) {

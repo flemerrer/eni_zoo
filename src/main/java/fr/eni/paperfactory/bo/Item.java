@@ -7,7 +7,8 @@ public abstract class Item {
     private float price;
     private int id;
 
-    public Item(String model, String brand, String name, float price) {
+    public Item(Integer id, String model, String brand, String name, float price) {
+        this.id = id;
         this.model = model;
         this.brand = brand;
         this.name = name;

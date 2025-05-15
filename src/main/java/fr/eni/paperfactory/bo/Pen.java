@@ -3,8 +3,8 @@ package fr.eni.paperfactory.bo;
 public class Pen extends Item {
     private String color;
 
-    public Pen(String model, String brand, String name, float price, String color) {
-        super(model, brand, name, price);
+    public Pen(Integer id, String model, String brand, String name, float price, String color) {
+        super(id, model, brand, name, price);
         this.color = color;
     }
 

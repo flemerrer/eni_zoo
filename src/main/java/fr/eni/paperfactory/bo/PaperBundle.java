@@ -4,8 +4,8 @@ public class PaperBundle extends Item {
 
     private int grain;
 
-    public PaperBundle(String model, String brand, String name, float price, int grain) {
-        super(model, brand, name, price);
+    public PaperBundle(Integer id, String model, String brand, String name, float price, int grain) {
+        super(id, model, brand, name, price);
         this.grain = grain;
     }
 

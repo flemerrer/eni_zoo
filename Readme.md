@@ -37,6 +37,6 @@ Main projects : fr.eni.zoo and fr.eni.paperfactory
   - For better tests, each one should be independant from each other (not currently the case)
 
 ### PW6 (additional)
-- Status: Ongoing
+- Status: Done
 - Comments:
-  - None
+  - Could implement better BusinessException handling and more explicit messages
